@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialists Categories</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7f6; text-align: center; margin: 0; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 500px; margin: 40px auto; }
+        .card { background-color: white; border: 1px solid #ddd; border-radius: 10px; padding: 30px 20px; text-align: center; text-decoration: none; color: #333; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); background-color: #eef9f5; }
+    </style>
+</head>
+<body>
+
+    <h2>Select a Specialty</h2>
+
+    <div class="grid"> 
+        <!-- Query parameter (?type=) add panniyachu -->
+        <a href="doctors.html?type=physiotherapy" class="card">🏃‍♂️ <br><br> Physiotherapy</a> 
+        <a href="doctors.html?type=pediatrician" class="card">👶 <br><br> Pediatrician</a> 
+        <a href="doctors.html?type=dermatologist" class="card">🩺 <br><br> Dermatologist</a> 
+        <a href="doctors.html?type=general_physician" class="card">👨‍⚕️ <br><br> General Physician</a> 
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Doctors</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .doc-list { list-style: none; padding: 0; }
+        .doc-item { background: white; margin: 15px auto; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px #ccc; display: flex; justify-content: space-between; align-items: center; text-align: left; }
+        .doc-info { display: flex; flex-direction: column; gap: 5px; }
+        .doc-name { font-size: 1.1rem; color: #333; }
+        .doc-exp { font-size: 0.9rem; color: #666; }
+        .book-btn { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .back-link { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h2 id="specialty-title">Available Doctors</h2>
+        <ul id="doctors-container" class="doc-list"></ul>
+        
+        <br>
+        <a href="specialists.html" class="back-link">⬅ Go Back</a>
+    </div>
+
+    <script>
+        const doctorsData = {
+            physiotherapy: {
+                title: "Physiotherapy",
+                list: [
+                    { name: "Dr. Rajesh", exp: "8 Years" },
+                    { name: "Dr. Priya ", exp: "5 Years" },
+                    { name: "Dr. Mohammed", exp: "12 Years" },
+                    { name: "Dr. Kavitha ", exp: "7 Years" }
+                ]
+            },
+            pediatrician: {
+                title: "Pediatrician",
+                list: [
+                    { name: "Dr. Ram", exp: "10 Years" },
+                    { name: "Dr. Divya", exp: "6 Years" },
+                    { name: "Dr. Krishnapriya", exp: "15 Years" },
+                    { name: "Dr. Sathana", exp: "4 Years" }
+                ]
+            },
+            dermatologist: {
+                title: "Dermatologist",
+                list: [
+                    { name: "Dr. Eylilarasi", exp: "9 Years" },
+                    { name: "Dr. Aakash", exp: "7 Years" },
+                    { name: "Dr. Venmathi", exp: "14 Years" },
+                    { name: "Dr. Sivakumar", exp: "4 Years" }
+                ]
+            },
+            general_physician: {
+                title: "General Physician",
+                list: [
+                    { name: "Dr. Manoj Kumar", exp: "11 Years" },
+                    { name: "Dr. Sanjana", exp: "8 Years" },
+                    { name: "Dr. K. Raghavan", exp: "20 Years" },
+                    { name: "Dr. Sathya", exp: "5 Years" }
+                ]
+            }
+        };
+        const urlParams = new URLSearchParams(window.location.search);
+        const type = urlParams.get('type');
+
+        const titleElement = document.getElementById('specialty-title');
+        const containerElement = document.getElementById('doctors-container');
+
+        if (type && doctorsData[type]) {
+            const selected = doctorsData[type];
+            titleElement.innerText = `Available Doctors for ${selected.title}`;
+            
+            selected.list.forEach(doctor => {
+                const li = document.createElement('li');
+                li.className = 'doc-item';
+                li.innerHTML = `
+                    <div class="doc-info">
+                       <span class="doc-name"><b>${doctor.name}</b></span>
+                       <span class="doc-exp">💼 Experience: ${doctor.exp}</span>
+                    </div>
+                    <a href="booking.html?doctor=${encodeURIComponent(doctor.name)}" class="book-btn">Book Home Visit</a>
+             `;
+
+                containerElement.appendChild(li);
+            });
+        } else {
+            titleElement.innerText = "No Specialty Selected";
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,58 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Montserrat', sans-serif; 
+    background-color:pink; 
+}
+
+
+/* Main Container */ 
+.homepage-container { 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  position: relative; 
+} 
+
+/* Login Header Layout */ 
+.top-header { 
+  display: flex; 
+  justify-content: flex-end; 
+  padding: 20px; 
+} 
+
+/* Login Button Design */ 
+.login-btn { 
+  text-decoration: underline; 
+  color: blue; 
+  font-weight: 500; 
+  font-size: 1rem; 
+} 
+
+.hero-content { 
+  display: flex; 
+  flex-direction: column; 
+  text-align: center; 
+  justify-content: center; 
+  flex-grow: 1; 
+} 
+
+.brand-name { 
+  font-family: 'Cinzel', serif; 
+  font-size: 4rem; 
+  font-weight: 700; 
+  margin: 0 0 10px 0; 
+  letter-spacing: 4px; 
+  color: rgb(74, 12, 220); 
+} 
+
+.brand-slogan { 
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 1.2rem; 
+  font-weight: 300; 
+  margin: 0; 
+  letter-spacing: 2px; 
+  color: #333333; 
+}
+
